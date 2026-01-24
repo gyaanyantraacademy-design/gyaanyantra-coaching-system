@@ -1,13 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Gyaanyantra Coaching</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <h1>Welcome to Gyaanyantra Coaching</h1>
-  <p>Learning made simple 🚀</p>
+  <meta charset="UTF-8">
+  <title>GyaanYantra - Empowering Minds Through Education</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="js/script.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-container">
+
+      <!-- Logo -->
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <!-- image baad me add karna -->
+          <img src="D:/gyprojects/gyaanyantra-coaching-system/assets/images/logo1.png">
+          <p class="brand-name">Gyaan<span>Yantra</span></p>
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" aria-label="Hero Section">
+    <div class="container hero-inner">
+
+      <div class="hero-content">
+        <p class="kicker">Learn with expert teachers</p>
+        <h1>Empowering Minds Through Education</h1>
+        <p class="lead">
+          We offer learning opportunities from Class 1st to 12th with expert faculty,
+          quality content, and interactive learning tools.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="courses.html">Explore Courses</a>
+          <a class="btn btn-secondary" href="contact.html">Join Now</a>
+        </div>
+
+        <ul class="usps">
+          <li>✔ Expert Teachers</li>
+          <li>✔ Interactive Lessons</li>
+          <li>✔ Affordable Prices</li>
+        </ul>
+      </div>
+
+      <div class="hero-image">
+        <!-- image baad me add karna -->
+        <img src="D:/gyprojects/gyaanyantra-coaching-system/assets/images/heroimg.jpg" alt="Students learning online"> 
+      </div>
+
+    </div>
+
+    <!-- Decorative SVG -->
+    <svg class="hero-blob" viewBox="0 0 800 600" aria-hidden="true">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0" stop-color="#6ea8ff"/>
+          <stop offset="1" stop-color="#ff7b7b"/>
+        </linearGradient>
+      </defs>
+      <path fill="url(#g1)"
+        d="M438,19Q548,38,596,138Q644,238,575,324Q506,410,410,457Q314,504,211,449Q108,394,82,283Q56,172,149,91Q242,10,334,22Q426,34,438,19Z"
+        opacity="0.12"/>
+    </svg>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© <span id="year"></span> GyaanYantra. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
