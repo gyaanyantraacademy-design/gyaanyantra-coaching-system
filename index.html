@@ -2,101 +2,219 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>GyaanYantra - Empowering Minds Through Education</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>GyaanYantra Coaching System - Admin Dashboard</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header>
-    <div class="header-container">
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="assets/images/logo1.png" alt="GyaanYantra Logo" class="logo-img">
+     Gyaan<span>Yantra</span> 
+ </div>
+    <ul class="sidebar-menu">
+      <li><a href="#"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+      <li><a href="#"><i class="fa-solid fa-user-graduate"></i> Students</a></li>
+      <li><a href="#"><i class="fa-solid fa-book"></i> Courses</a></li>
+      <li><a href="#"><i class="fa-solid fa-calendar-check"></i> Attendance</a></li>
+      <li><a href="#"><i class="fa-solid fa-money-bill-wave"></i> Fees</a></li>
+      <li><a href="#"><i class="fa-solid fa-file-lines"></i> Reports</a></li>
+      <li><a href="#"><i class="fa-solid fa-user-tie"></i> Teachers</a></li>
+      <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+    </ul>
+  </aside>
 
-      <!-- Logo -->
-      <div class="logo">
-        <a href="index.html" class="logo-link">
-          <!-- image baad me add karna -->
-          <img src="D:/gyprojects/gyaanyantra-coaching-system/assets/images/logo1.png">
-          <p class="brand-name">Gyaan<span>Yantra</span></p>
-        </a>
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+    <!-- HEADER -->
+    <header>
+      <div class="header-left">
+        <button class="sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
+        <h1>Dashboard</h1>
       </div>
+      <div class="header-right">
+        <span>Welcome, Admin</span>
+      </div>
+    </header>
 
-      <!-- Navigation -->
-      <nav aria-label="Main Navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="courses.html">Courses</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="features.html">Features</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-    </div>
-  </header>
-
-  <!-- ===== HERO SECTION ===== -->
-  <section class="hero" aria-label="Hero Section">
-    <div class="container hero-inner">
-
-      <div class="hero-content">
-        <p class="kicker">Learn with expert teachers</p>
-        <h1>Empowering Minds Through Education</h1>
-        <p class="lead">
-          We offer learning opportunities from Class 1st to 12th with expert faculty,
-          quality content, and interactive learning tools.
-        </p>
-
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="courses.html">Explore Courses</a>
-          <a class="btn btn-secondary" href="contact.html">Join Now</a>
+    <!-- HERO / CARDS -->
+    <section class="hero">
+      <div class="cards">
+        <div class="card">
+          <i class="fa-solid fa-user-graduate"></i>
+          <h3>120</h3>
+          <p>Total Students</p>
         </div>
-
-        <ul class="usps">
-          <li>✔ Expert Teachers</li>
-          <li>✔ Interactive Lessons</li>
-          <li>✔ Affordable Prices</li>
-        </ul>
+        <div class="card">
+          <i class="fa-solid fa-book"></i>
+          <h3>8</h3>
+          <p>Courses</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-calendar-check"></i>
+          <h3>110</h3>
+          <p>Today's Attendance</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-money-bill-wave"></i>
+          <h3>₹50,000</h3>
+          <p>Fees Collected</p>
+        </div>
       </div>
+    </section>
 
-      <div class="hero-image">
-        <!-- image baad me add karna -->
-        <img src="D:/gyprojects/gyaanyantra-coaching-system/assets/images/heroimg.jpg" alt="Students learning online"> 
+    <!-- QUICK ACTIONS -->
+    <section class="quick-actions">
+      <h2>Quick Actions</h2>
+      <div class="actions">
+        <button id="addStudentBtn"><i class="fa-solid fa-user-plus"></i> Add Student</button>
+        <button id="addCourseBtn"><i class="fa-solid fa-book-medical"></i> Add Course</button>
+        <button><i class="fa-solid fa-file-lines"></i> Generate Report</button>
+        <button><i class="fa-solid fa-bell"></i> Send Notification</button>
       </div>
+    </section>
 
+    <!-- STUDENTS TABLE -->
+    <section class="table-section">
+      <h2>Recent Students</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Phone</th>
+            <th>Fee Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Rohit Sharma</td>
+            <td>10th</td>
+            <td>9876543210</td>
+            <td><span class="paid">Paid</span></td>
+          </tr>
+          <tr>
+            <td>Priya Singh</td>
+            <td>9th</td>
+            <td>9876512340</td>
+            <td><span class="due">Due</span></td>
+          </tr>
+          <tr>
+            <td>Amit Verma</td>
+            <td>12th</td>
+            <td>9876523450</td>
+            <td><span class="paid">Paid</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- CHARTS -->
+    <section class="charts">
+      <h2>Analytics</h2>
+      <div class="chart-container">
+        <canvas id="feesChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="attendanceChart"></canvas>
+      </div>
+    </section>
+
+    <!-- ANNOUNCEMENTS -->
+    <section class="announcements">
+      <h2>Announcements</h2>
+      <ul>
+        <li>New batch starting from 1st Feb.</li>
+        <li>Exam schedule released.</li>
+        <li>Fee due reminders sent to students.</li>
+      </ul>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      &copy; <span id="year"></span> GyaanYantra Academy. All Rights Reserved.
+    </footer>
+  </main>
+
+  <!-- ===== MODALS ===== -->
+  <div id="studentModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Add Student</h2>
+      <form>
+        <input type="text" placeholder="Name" required>
+        <input type="text" placeholder="Class" required>
+        <input type="text" placeholder="Phone" required>
+        <select required>
+          <option value="">Fee Status</option>
+          <option value="paid">Paid</option>
+          <option value="due">Due</option>
+        </select>
+        <button type="submit">Add Student</button>
+      </form>
     </div>
+  </div>
 
-    <!-- Decorative SVG -->
-    <svg class="hero-blob" viewBox="0 0 800 600" aria-hidden="true">
-      <defs>
-        <linearGradient id="g1" x1="0" x2="1">
-          <stop offset="0" stop-color="#6ea8ff"/>
-          <stop offset="1" stop-color="#ff7b7b"/>
-        </linearGradient>
-      </defs>
-      <path fill="url(#g1)"
-        d="M438,19Q548,38,596,138Q644,238,575,324Q506,410,410,457Q314,504,211,449Q108,394,82,283Q56,172,149,91Q242,10,334,22Q426,34,438,19Z"
-        opacity="0.12"/>
-    </svg>
-  </section>
+  <div id="courseModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Add Course</h2>
+      <form>
+        <input type="text" placeholder="Course Name" required>
+        <input type="text" placeholder="Teacher Name" required>
+        <button type="submit">Add Course</button>
+      </form>
+    </div>
+  </div>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <p>© <span id="year"></span> GyaanYantra. All Rights Reserved.</p>
-  </footer>
-
+  <!-- ===== SCRIPTS ===== -->
+  <script src="js/script.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ===== CHARTS =====
+    const feesCtx = document.getElementById('feesChart').getContext('2d');
+    const feesChart = new Chart(feesCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Jan','Feb','Mar','Apr','May'],
+        datasets: [{
+          label: 'Fees Collected',
+          data: [50000, 40000, 60000, 45000, 70000],
+          backgroundColor: '#2563eb'
+        }]
+      },
+      options: { responsive:true, plugins:{legend:{display:false}} }
+    });
+
+    const attendanceCtx = document.getElementById('attendanceChart').getContext('2d');
+    const attendanceChart = new Chart(attendanceCtx, {
+      type: 'line',
+      data: {
+        labels: ['Mon','Tue','Wed','Thu','Fri'],
+        datasets: [{
+          label: 'Attendance',
+          data: [110, 108, 115, 112, 111],
+          borderColor: '#ff4b5c',
+          backgroundColor: 'rgba(255,75,92,0.2)',
+          tension:0.4
+        }]
+      },
+      options: { responsive:true, plugins:{legend:{display:false}} }
+    });
   </script>
 
 </body>
